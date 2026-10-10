@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory font-sans text-espresso antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+  }
+  ::selection {
+    background: #d9c7ad;
+  }
+  :focus-visible {
+    outline: 2px solid #b66e50;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-olive px-6 py-3 text-sm font-medium uppercase tracking-[0.18em] text-ivory transition hover:bg-espresso disabled:cursor-not-allowed disabled:bg-sand disabled:text-espresso/50;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-olive px-6 py-3 text-sm font-medium uppercase tracking-[0.18em] text-olive transition hover:bg-olive hover:text-ivory disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 bg-terracotta px-6 py-3 text-sm font-medium uppercase tracking-[0.18em] text-ivory transition hover:bg-espresso disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .field {
+    @apply w-full border border-sand bg-white/70 px-4 py-3 text-base text-espresso placeholder:text-espresso/40 focus:border-olive focus:outline-none;
+  }
+  .field-label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-[0.16em] text-olive;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.32em] text-terracotta;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+}
